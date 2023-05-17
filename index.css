@@ -1,0 +1,52 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+  border: 1px solid black;
+}
+
+.nav-items ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-items ul li {
+  padding: 10px;
+}
+.logo {
+  width: 100px;
+}
+
+.card {
+  width: 30%;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+}
+.card img {
+  width: 100%; /*image will take full width of card */
+}
+
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.restName {
+  font-size: large;
+  font-weight: bolder;
+}
+
+
+.cuisine {
+ overflow-wrap: break-word;
+  font-weight: bold;
+  width: 80%;
+}
+.shimmer-card{
+  width: 200px;
+  height:200px;
+  padding: 10px;
+  margin: 10px;
+  background-color:lightgray;
+}
