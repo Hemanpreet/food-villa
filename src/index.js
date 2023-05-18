@@ -4,12 +4,12 @@ import Header from "../components/Header";
 import Body from "../components/Body";
 import Footer from "../components/Footer";
 import About from "../components/About";
-import Error from "../components/Error"
-import { createBrowserRouter,RouterProvider,Outlet} from "react-router-dom";
+import Error from "../components/Error";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Contact from "../components/Contact";
 import RestaurantDetail from "../components/RestaurantDetail";
+import Profile from "../components/Profile";
 // Functional component header which will include Title/logo and right side navbar i.e NavItems
-
 
 // const OmSweetsAndSnacks = {
 //     name:"Om Sweets And Snacks",
@@ -28,42 +28,46 @@ import RestaurantDetail from "../components/RestaurantDetail";
 // );
 // restaurantList is an object
 
-
 const AppLayout = () => {
   return (
     <>
       <Header />
-      <Outlet/>
+      <Outlet />
       <Footer />
     </>
   );
 };
 
-const appRouter=createBrowserRouter([
+const appRouter = createBrowserRouter([
   {
-    path:"/",
-    element:<AppLayout/>,
-    errorElement:<Error/>,
-    children:[
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <Error />,
+    children: [
       {
-        path:"/about",
-        element:<About/>,
+        path: "/about",
+        element: <About />,
+        children: [
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+        ],
       },
       {
-        path:"/contact",
-        element:<Contact/>
+        path: "/contact",
+        element: <Contact />,
       },
       {
-        path:"/",
-        element:<Body/>
+        path: "/",
+        element: <Body />,
       },
       {
-        path:"/restaurant/:resId",
-        element:<RestaurantDetail/>
+        path: "/restaurant/:resId",
+        element: <RestaurantDetail />,
       },
-    ]
+    ],
   },
-
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter}/>);
+root.render(<RouterProvider router={appRouter} />);
