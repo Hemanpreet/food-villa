@@ -2,7 +2,7 @@ import { restaurantList } from "./config";
 import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-
+import { Link } from "react-router-dom";
 function filterData(searchTxt, restaurants) {
   return restaurants.filter((restaurant) =>
     restaurant?.data?.name?.toLowerCase()?.includes(searchTxt.toLowerCase())
@@ -56,7 +56,11 @@ Body = () => {
           <h1>No restaurant match your filter</h1>
         ) : (
           filteredRestaurants.map((restaurantItem, index) => {
-            return <RestaurantCard restaurantItem={restaurantItem}  key={index} />;
+            return (
+              <Link to={"/restaurant/"+restaurantItem.data.id} key={restaurantItem.data.id}>
+            <RestaurantCard restaurantItem={restaurantItem} />
+            </Link>
+            );
           })
           /* here restaurants is the array created using restaurantList and state variable */
           /* restaurantItem is the item one by one present in restaurants array  */
@@ -71,7 +75,6 @@ Body = () => {
         <RestaurantCard restaurant={restaurants[6]} />
         <RestaurantCard restaurant={restaurants[7]} /> */
         )}
-        ;
       </div>
     </>
   );
