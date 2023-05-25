@@ -9,6 +9,8 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Contact from "../components/Contact";
 import RestaurantDetail from "../components/RestaurantDetail";
 import Profile from "../components/Profile";
+// import Instamart from "../components/Instamart";
+import {lazy} from "react";
 // Functional component header which will include Title/logo and right side navbar i.e NavItems
 
 // const OmSweetsAndSnacks = {
@@ -28,6 +30,7 @@ import Profile from "../components/Profile";
 // );
 // restaurantList is an object
 
+const Instamart=lazy(()=>import("../components/Instamart"));
 const AppLayout = () => {
   return (
     <>
@@ -65,6 +68,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restaurant/:resId",
         element: <RestaurantDetail />,
+      },
+      {
+        path: "/instamart",
+        element: <Instamart />,
       },
     ],
   },

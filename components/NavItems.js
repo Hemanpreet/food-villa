@@ -1,17 +1,20 @@
 import {Link} from "react-router-dom";
+import Instamart from "./Instamart";
 // functional component 2-NavItems of Header i.e navbar
 export const NavItems = () => (
     <div className="nav-items">
       <ul>
       <Link to="/">
       <li>Home</li>
-      </Link>
-       
+      </Link> 
        <Link to="/about">
        <li>About</li>
        </Link>
        <Link to="/contact">
         <li>Contact</li>
+        </Link>
+        <Link to="/instamart">
+          <li>Instamart</li>
         </Link>
       </ul>
     </div>

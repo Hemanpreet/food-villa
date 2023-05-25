@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnline from "./utils/useOnline";
 function filterData(searchTxt, restaurants) {
   return restaurants.filter((restaurant) =>
     restaurant?.data?.name?.toLowerCase()?.includes(searchTxt.toLowerCase())
@@ -17,6 +18,13 @@ Body = () => {
 
     getRestaurants();
   }, []);
+
+  const isOnline=useOnline();
+  if(!isOnline){
+    return (
+    <h1>Offline,please check your internet connection</h1>
+    );
+  }
   async function getRestaurants() {
     const data = await fetch(
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.4089123&lng=77.3177894&page_type=DESKTOP_WEB_LISTING"
