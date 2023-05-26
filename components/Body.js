@@ -38,7 +38,7 @@ Body = () => {
 
   return allRestaurants.length===0?<Shimmer/>: (
     <>
-      <div className="search-container">
+      <div className="search-container p-5 bg-cyan-600 my-2">
         {/* make an input box */}
         <input
           type="text"
@@ -50,7 +50,7 @@ Body = () => {
           }}
         />
         <button
-          className="search-btn"
+          className="search-btn px-3 mx-2 bg-pink-100 rounded-xl"
           onClick={() => {
             const data = filterData(searchTxt, allRestaurants);
             setFilteredRestaurants(data);
@@ -59,7 +59,7 @@ Body = () => {
           Search
         </button>
       </div>
-      <div className="restaurant-list">
+      <div className="restaurant-list flex flex-wrap">
         {filteredRestaurants.length === 0 ? (
           <h1>No restaurant match your filter</h1>
         ) : (

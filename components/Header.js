@@ -6,14 +6,14 @@ const Header = () => {
   const [isLoggedIn,setIsLoggedIn]=useState(true);  
   const isOnline=useOnline();
     return(
-    <div className="header">
+    <div className="flex justify-between bg-cyan-600 shadow-xl">
      <Title/>
      <NavItems/>
-     <h1>{isOnline?"☑️":"🔼"}</h1>
+     <h1 className="my-10">{isOnline?"☑️":"🔼"}</h1>
      {
       
       isLoggedIn? (
-        <button onClick={()=>setIsLoggedIn(false)}>Logout</button>
+        <button className="my-9 p-2 bg-pink-100 rounded-lg" onClick={()=>setIsLoggedIn(false)}>Logout</button>
       ):
       (
           <button onClick={()=>setIsLoggedIn(true)}>Login</button>
