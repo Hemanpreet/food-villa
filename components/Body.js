@@ -42,7 +42,7 @@ Body = () => {
         {/* make an input box */}
         <input
           type="text"
-          className="search-input"
+          className="search-input focus:bg-gray-300"
           placeholder="Search"
           value={searchTxt}
           onChange={(e) => {
@@ -50,7 +50,7 @@ Body = () => {
           }}
         />
         <button
-          className="search-btn px-3 mx-2 bg-pink-100 rounded-xl"
+          className="search-btn px-3 mx-2 bg-pink-100 hover:bg-gray-300 rounded-xl"
           onClick={() => {
             const data = filterData(searchTxt, allRestaurants);
             setFilteredRestaurants(data);
