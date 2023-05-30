@@ -10,7 +10,7 @@ function filterData(searchTxt, restaurants) {
      );
 }
 
-Body = () => {
+Body = (props) => {
   const [searchTxt, setSearchTxt] = useState("");
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
@@ -66,7 +66,7 @@ Body = () => {
           filteredRestaurants.map((restaurantItem, index) => {
             return (
               <Link to={"/restaurant/"+restaurantItem.data.id} key={restaurantItem.data.id}>
-            <RestaurantCard restaurantItem={restaurantItem} />
+            <RestaurantCard restaurantItem={restaurantItem} user={props.user}/>
             </Link>
             );
           })

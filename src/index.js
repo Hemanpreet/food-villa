@@ -11,6 +11,7 @@ import RestaurantDetail from "../components/RestaurantDetail";
 import Profile from "../components/Profile";
 import {lazy,Suspense} from "react";
 import Shimmer from "../components/Shimmer";
+import { useState } from "react";
 // Functional component header which will include Title/logo and right side navbar i.e NavItems
 
 // const OmSweetsAndSnacks = {
@@ -34,6 +35,7 @@ const Instamart=lazy(()=>import("../components/Instamart"));
 const About=lazy(()=>import("../components/About"));
 const Contact=lazy(()=>import("../components/Contact"));
 const AppLayout = () => {
+  const [user,setUser]=useState();
   return (
     <>
       <Header />
@@ -75,7 +77,8 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/",
-        element: <Body />,
+        element: <Body user={{name:"Namaste React",
+        email:"abc@gmail.com",}}/>,
       },
       {
         path: "/restaurant/:resId",

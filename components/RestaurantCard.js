@@ -12,6 +12,7 @@ const RestaurantCard = (props) => {
         <div className="lastMil">
           {props?.restaurantItem?.data?.lastMileTravelString} minutes
         </div>
+        <div>{props.user.name}</div>
       </div>
     );
   };
