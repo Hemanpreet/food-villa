@@ -1,7 +1,7 @@
 import { IMG_CDN_URL } from "./config";
 import { restaurantList } from "./config";
 const RestaurantCard = (props) => {
-  
+  //  const {user}=useContext(UserContext);
     return (
       <div className="card w-[30rem] p-3 m-3 shadow-lg bg-cyan-600">
         <img
@@ -13,7 +13,6 @@ const RestaurantCard = (props) => {
         <div className="lastMil">
           {props?.restaurantItem?.data?.lastMileTravelString}
         </div>
-        
       </div>
     );
   };

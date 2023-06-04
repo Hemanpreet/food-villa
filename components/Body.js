@@ -36,7 +36,7 @@ Body = (props) => {
     setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
 
-  return allRestaurants.length===0?<Shimmer/>: (
+  return (!allRestaurants || allRestaurants.length===0)?<Shimmer/>: (
     <>
       <div className="search-container p-5 bg-cyan-600 my-2">
         {/* make an input box */}
