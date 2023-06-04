@@ -66,7 +66,7 @@ Body = (props) => {
           filteredRestaurants.map((restaurantItem, index) => {
             return (
               <Link to={"/restaurant/"+restaurantItem.data.id} key={restaurantItem.data.id}>
-            <RestaurantCard restaurantItem={restaurantItem} user={props.user}/>
+            <RestaurantCard restaurantItem={restaurantItem}/>
             </Link>
             );
           })

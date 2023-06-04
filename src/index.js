@@ -35,7 +35,7 @@ const Instamart=lazy(()=>import("../components/Instamart"));
 const About=lazy(()=>import("../components/About"));
 const Contact=lazy(()=>import("../components/Contact"));
 const AppLayout = () => {
-  const [user,setUser]=useState();
+
   return (
     <>
       <Header />
@@ -77,8 +77,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/",
-        element: <Body user={{name:"Namaste React",
-        email:"abc@gmail.com",}}/>,
+        element: <Body/>,
       },
       {
         path: "/restaurant/:resId",

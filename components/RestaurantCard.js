@@ -1,6 +1,7 @@
 import { IMG_CDN_URL } from "./config";
 import { restaurantList } from "./config";
 const RestaurantCard = (props) => {
+  
     return (
       <div className="card w-[30rem] p-3 m-3 shadow-lg bg-cyan-600">
         <img
@@ -10,9 +11,9 @@ const RestaurantCard = (props) => {
         <div className="cuisine"> {props?.restaurantItem?.data?.cuisines.join(",")}
         </div>
         <div className="lastMil">
-          {props?.restaurantItem?.data?.lastMileTravelString} minutes
+          {props?.restaurantItem?.data?.lastMileTravelString}
         </div>
-        <div>{props.user.name}</div>
+        
       </div>
     );
   };

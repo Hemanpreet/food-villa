@@ -2,13 +2,17 @@ import Title from "../components/Title.js";
 import { NavItems } from "../components/NavItems";
 import {useState} from "react";
 import useOnline from "./utils/useOnline.js";
+import { useContext } from "react";
+import UserContext from "./utils/UserContext.js";
 const Header = () => {
+  const {user}=useContext(UserContext);
   const [isLoggedIn,setIsLoggedIn]=useState(true);  
   const isOnline=useOnline();
     return(
     <div className="flex justify-between bg-cyan-600 shadow-xl sm:bg-blue-100">
      <Title/>
      <NavItems/>
+      <span className="p-10 font-bold text-red-900">{user.name}</span>
      <h1 className="my-10">{isOnline?"☑️":"🔼"}</h1>
      {
       
