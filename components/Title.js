@@ -2,7 +2,7 @@ import logo from "../assets/img/logo.png";
 
 // functional component 1-Title of Header
 const Title = () => (
-<img className="h-28 p-2"
+<img className="h-28 p-2 border-blue-900 border-2"
  alt="logo" 
  src={logo} />
 );

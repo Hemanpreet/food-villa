@@ -13,6 +13,7 @@ const useRestaurantDetail = (resId)=>{
         setRestaurant(json.data);
         //  console.log(restaurant?.cards[0]?.card?.card?.info.name);
       }
+
       return restaurant;
 }
 

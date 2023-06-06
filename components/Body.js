@@ -38,7 +38,7 @@ Body = (props) => {
 
   return (!allRestaurants || allRestaurants.length===0)?<Shimmer/>: (
     <>
-      <div className="search-container p-5 bg-cyan-600 my-2">
+      <div className="search-container text-xl font-bold p-5 m-2 bg-blue-300">
         {/* make an input box */}
         <input
           type="text"
@@ -59,7 +59,7 @@ Body = (props) => {
           Search
         </button>
       </div>
-      <div className="restaurant-list flex flex-wrap">
+      <div className="restaurant-list flex flex-wrap ">
         {filteredRestaurants.length === 0 ? (
           <h1>No restaurant match your filter</h1>
         ) : (

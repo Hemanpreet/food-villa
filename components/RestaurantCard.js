@@ -3,7 +3,7 @@ import { restaurantList } from "./config";
 const RestaurantCard = (props) => {
   //  const {user}=useContext(UserContext);
     return (
-      <div className="card w-[30rem] p-3 m-3 shadow-lg bg-cyan-600">
+      <div className="card text-xl font-bold p-5 m-2 bg-blue-300">
         <img
           src={IMG_CDN_URL +props?.restaurantItem?.data?.cloudinaryImageId}
         />
@@ -13,6 +13,7 @@ const RestaurantCard = (props) => {
         <div className="lastMil">
           {props?.restaurantItem?.data?.lastMileTravelString}
         </div>
+
       </div>
     );
   };

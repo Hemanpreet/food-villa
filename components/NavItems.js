@@ -5,16 +5,16 @@ export const NavItems = () => (
     <div>
       <ul className="flex py-10">
       <Link to="/">
-      <li className="px-3 hover:bg-slate-200">Home</li>
+      <li className="px-3 hover:bg-slate-200 text-xl font-bold">Home</li>
       </Link> 
        <Link to="/about">
-       <li className="px-3 hover:bg-slate-200">About</li>
+       <li className="px-3 hover:bg-slate-200 text-xl font-bold">About</li>
        </Link>
        <Link to="/contact">
-        <li className="px-3 hover:bg-slate-200">Contact</li>
+        <li className="px-3 hover:bg-slate-200 text-xl font-bold">Contact</li>
         </Link>
         <Link to="/instamart">
-          <li className="px-3 hover:bg-slate-200">Instamart</li>
+          <li className="px-3 hover:bg-slate-200 text-xl font-bold">Instamart</li>
         </Link>
       </ul>
     </div>

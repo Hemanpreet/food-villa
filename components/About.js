@@ -2,9 +2,9 @@ import { Outlet } from "react-router-dom";
 import ProfileClass from "./ProfileClass";
 const About =()=>{
     return(
-        <div className="bg-zinc-100 ml-7">
-         <h1>About us page</h1>
-        <p>hello this is food villa website welcome to our page</p>
+        <div>
+         <div className="text-xl font-bold p-5 m-2 bg-blue-300">About us page</div>
+        <p className="text-xl font-bold p-5 m-2 bg-blue-300">hello this is food villa website welcome to our page</p>
         <Outlet/>
         <ProfileClass name={"Hemanpreet"}/>
         </div>

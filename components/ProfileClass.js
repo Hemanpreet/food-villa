@@ -21,10 +21,10 @@ async componentDidMount(){
     render(){
     return(
         <div>
-        <h1>Profile from class based component</h1>
-        <img src={this.state.userInfo.avatar_url}/>
-        <h2>Name: {this.state.userInfo.name}</h2>
-        <h2>Type: {this.state.userInfo.type}</h2>
+        <div className="text-xl font-bold p-5 m-2 bg-blue-300">Profile from class based component</div>
+        <img className="p-5 m-2 border-blue-800 border-2"src={this.state.userInfo.avatar_url}/>
+        <div className="text-xl font-bold p-5 m-2 bg-blue-300">Name: {this.state.userInfo.name}</div>
+        <div className="text-xl font-bold p-5 m-2 bg-blue-300">Type: {this.state.userInfo.type}</div>
         </div>
     
     );

@@ -12,15 +12,15 @@ const Header = () => {
     <div className="flex justify-between bg-cyan-600 shadow-xl sm:bg-blue-100">
      <Title/>
      <NavItems/>
-      <span className="p-10 font-bold text-red-900">{user.name}</span>
+      <span className="p-10 text-red-900 text-xl font-bold">{user.name}</span>
      <h1 className="my-10">{isOnline?"☑️":"🔼"}</h1>
      {
       
       isLoggedIn? (
-        <button className="my-9 p-2 bg-pink-200 hover:bg-gray-400  rounded-lg" onClick={()=>setIsLoggedIn(false)}>Logout</button>
+        <button className="my-9 p-2 bg-pink-200 hover:bg-gray-400  rounded-lg text-xl font-bold" onClick={()=>setIsLoggedIn(false)}>Logout</button>
       ):
       (
-          <button className="my-9 p-2 bg-pink-200 hover:bg-gray-400  rounded-lg" onClick={()=>setIsLoggedIn(true)}>Login</button>
+          <button className="my-9 p-2 bg-pink-200 hover:bg-gray-400  rounded-lg text-xl font-bold" onClick={()=>setIsLoggedIn(true)}>Login</button>
       )
      }
     </div>
