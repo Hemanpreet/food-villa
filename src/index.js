@@ -12,6 +12,9 @@ import Profile from "../components/Profile";
 import {lazy,Suspense} from "react";
 import Shimmer from "../components/Shimmer";
 import { useState } from "react";
+import { Provider } from "react-redux";
+import store from "../components/utils/store";
+import Cart from "../components/Cart";
 // Functional component header which will include Title/logo and right side navbar i.e NavItems
 
 // const OmSweetsAndSnacks = {
@@ -37,11 +40,11 @@ const Contact=lazy(()=>import("../components/Contact"));
 const AppLayout = () => {
 
   return (
-    <>
+    <Provider store={store}>
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </Provider>
   );
 };
 
@@ -92,6 +95,10 @@ const appRouter = createBrowserRouter([
           </Suspense>
        ),
       },
+      {
+        path:"/cart",
+        element:<Cart/>
+      }
     ],
   },
 ]);

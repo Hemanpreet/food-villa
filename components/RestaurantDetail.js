@@ -4,6 +4,8 @@ import { IMG_CDN_URL } from "./config";
 import { restaurantList } from "./config";
 import Shimmer from "./Shimmer";
 import useRestaurantDetail from "./utils/useRestaurantDetail";
+import { addItem } from "./utils/cartSlice";
+import {useDispatch} from "react-redux";
 const functionCheck=(restaurant)=>{
   let menuInfo=[];
 if(restaurant!==null){
@@ -23,13 +25,16 @@ if(cards!==null){
     }
   }
 }
- console.log(menuInfo,"heman the cutie");
 return menuInfo;
 }
 const RestaurantDetail = () => {
   const {resId} = useParams();
   // const [restaurant, setRestaurant] = useState(null);
   const restaurant=useRestaurantDetail(resId);
+ const dispatch=useDispatch();
+ const addFoodItem = (menuInfo) =>{
+  dispatch(addItem(menuInfo));
+ }
 let menuArray=functionCheck(restaurant);
   return (!restaurant)?<Shimmer/>:(
     <div className="menu">
@@ -49,13 +54,19 @@ let menuArray=functionCheck(restaurant);
        <div className="font-bold p-5 m-2 bg-pink-200 pl-10">
        {menuArray.map((menuInfo,index)=>{
         return(
-         <div>
-          <h3>{menuInfo.name}</h3>
-          <h3>{menuInfo.category}</h3>
+         <>
+          <div className="text-lg">{menuInfo.name}</div>
+          <div className="text-lg">{menuInfo.category}</div>
           <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700"/>
-          </div>
+          <button className="p-1 mb-2 bg-blue-300 hover:bg-gray-400  rounded-lg text-xl font-bold" 
+          onClick={()=>addFoodItem(menuInfo)}>Add Item</button>
+          <hr class="h-1 mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
+          <hr class="h-1 mx-auto mt-2 mb-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-700"></hr>
+         </>
         );
        })}
+       
+
        </div>
     </div>
   );  
